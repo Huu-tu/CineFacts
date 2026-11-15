@@ -1,0 +1,2626 @@
+{
+ "id": "demo",
+ "title": "Why Are Airplanes Painted White?",
+ "style": "documentary",
+ "voice": "am_michael",
+ "target_minutes": 11,
+ "chapters": [
+  {
+   "id": "c01",
+   "title": "A Sea of White",
+   "sentences": [
+    {
+     "id": "c01s001",
+     "text": "Walk through any major airport at sunrise and you'll notice something strange.",
+     "shots": [
+      {
+       "id": "c01s001a",
+       "kind": "video",
+       "query": "airport sunrise airplanes aerial",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s002",
+     "text": "Hundreds of airlines, from dozens of countries, each with its own logo and its own identity.",
+     "shots": [
+      {
+       "id": "c01s002a",
+       "kind": "video",
+       "query": "airline tails logos airport",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s003",
+     "text": "And yet, almost every one of their aircraft wears the same basic colour: white.",
+     "shots": [
+      {
+       "id": "c01s003a",
+       "kind": "video",
+       "query": "white airplane parked apron",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s004",
+     "text": "It isn't an accident, and it isn't just fashion.",
+     "shots": [
+      {
+       "id": "c01s004a",
+       "kind": "video",
+       "query": "airliner taxiing runway",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s005",
+     "text": "Behind that plain coat of paint sits a whole stack of decisions about physics, money and safety.",
+     "shots": [
+      {
+       "id": "c01s005a",
+       "kind": "video",
+       "query": "aircraft hangar maintenance",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s006",
+     "text": "Some of the reasons you'll hear online are completely true.",
+     "shots": [
+      {
+       "id": "c01s006a",
+       "kind": "video",
+       "query": "airplane wing window view clouds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s007",
+     "text": "Some are only half true.",
+     "shots": [
+      {
+       "id": "c01s007a",
+       "kind": "video",
+       "query": "airplane flying above clouds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s008",
+     "text": "And at least one of them is probably a myth.",
+     "shots": [
+      {
+       "id": "c01s008a",
+       "kind": "video",
+       "query": "birds flying sky flock",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c01s009",
+     "text": "So let's find out why airplanes really are white, and which explanations actually hold up.",
+     "shots": [
+      {
+       "id": "c01s009a",
+       "kind": "video",
+       "query": "airplane takeoff sunset",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "title": "Fighting the Sun",
+   "sentences": [
+    {
+     "id": "c02s001",
+     "text": "An airliner spends a huge part of its life in direct sunlight.",
+     "shots": [
+      {
+       "id": "c02s001a",
+       "kind": "video",
+       "query": "sun shining sky lens flare",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s002",
+     "text": "It sits on open aprons for hours, waits on hot taxiways, and flies above the clouds, where nothing ever shades it.",
+     "shots": [
+      {
+       "id": "c02s002a",
+       "kind": "video",
+       "query": "airplane parked hot airport heat haze",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s002b",
+       "kind": "video",
+       "query": "airplane above clouds sunlight",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s003",
+     "text": "Sunlight carries a surprising amount of energy, as ultraviolet, visible light and infrared.",
+     "shots": [
+      {
+       "id": "c02s003a",
+       "kind": "video",
+       "query": "sunlight rays spectrum",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s004",
+     "text": "When that energy hits a surface, some of it bounces off, and the rest is absorbed and turned into heat.",
+     "shots": [
+      {
+       "id": "c02s004a",
+       "kind": "video",
+       "query": "sunlight hitting metal surface",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s005",
+     "text": "A dark surface absorbs most of it.",
+     "shots": [
+      {
+       "id": "c02s005a",
+       "kind": "video",
+       "query": "black surface texture sun",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s006",
+     "text": "A white surface reflects most of it straight back into the sky.",
+     "shots": [
+      {
+       "id": "c02s006a",
+       "kind": "video",
+       "query": "white surface sunlight reflection",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s007",
+     "text": "You've probably felt this yourself.",
+     "shots": [
+      {
+       "id": "c02s007a",
+       "kind": "video",
+       "query": "hot summer day city",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s008",
+     "text": "On a summer afternoon, a black car can be too hot to touch, while a white car parked right next to it is merely warm.",
+     "shots": [
+      {
+       "id": "c02s008a",
+       "kind": "video",
+       "query": "black car sunlight parking",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s008b",
+       "kind": "video",
+       "query": "white car parked sunny",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s009",
+     "text": "For an aircraft, the difference matters most on the ground.",
+     "shots": [
+      {
+       "id": "c02s009a",
+       "kind": "video",
+       "query": "airplane at gate jet bridge",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s010",
+     "text": "At cruising altitude, the outside air is usually colder than minus forty degrees, so heat is rarely a problem up there.",
+     "shots": [
+      {
+       "id": "c02s010a",
+       "kind": "video",
+       "query": "airplane cruising high altitude contrail",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s010b",
+       "kind": "video",
+       "query": "frozen airplane window frost",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s011",
+     "text": "But parked at a gate in the desert sun, a dark fuselage would soak up heat for hours.",
+     "shots": [
+      {
+       "id": "c02s011a",
+       "kind": "video",
+       "query": "desert airport heat",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s012",
+     "text": "That heat flows into the cabin, so the air conditioning has to work harder before passengers even board.",
+     "shots": [
+      {
+       "id": "c02s012a",
+       "kind": "video",
+       "query": "empty airplane cabin seats",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s013",
+     "text": "White keeps the cabin cooler, and that means less energy spent on cooling while the aircraft waits.",
+     "shots": [
+      {
+       "id": "c02s013a",
+       "kind": "video",
+       "query": "passengers boarding airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s014",
+     "text": "Heat is also hard on the aircraft itself.",
+     "shots": [
+      {
+       "id": "c02s014a",
+       "kind": "video",
+       "query": "aircraft engine close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s015",
+     "text": "For decades, airliners were built mostly from aluminium.",
+     "shots": [
+      {
+       "id": "c02s015a",
+       "kind": "video",
+       "query": "aluminum aircraft rivets metal",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s016",
+     "text": "Today, the newest designs are different.",
+     "shots": [
+      {
+       "id": "c02s016a",
+       "kind": "video",
+       "query": "modern airliner flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s017",
+     "text": "The Boeing 787 is about half composite material by weight, and the Airbus A350 is even more than that.",
+     "say": "The Boeing seven eighty-seven is about half composite material by weight, and the Airbus A three fifty is even more than that.",
+     "shots": [
+      {
+       "id": "c02s017a",
+       "kind": "video",
+       "query": "boeing 787 dreamliner",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s017b",
+       "kind": "video",
+       "query": "airbus a350 flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s018",
+     "text": "Those composites are mostly carbon fibre, held together by a hard plastic resin.",
+     "shots": [
+      {
+       "id": "c02s018a",
+       "kind": "video",
+       "query": "carbon fiber texture close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s019",
+     "text": "They're strong and light, but the resin is sensitive to both heat and ultraviolet light.",
+     "shots": [
+      {
+       "id": "c02s019a",
+       "kind": "video",
+       "query": "carbon fiber weave macro",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s020",
+     "text": "Over time, too much of either can weaken it.",
+     "shots": [
+      {
+       "id": "c02s020a",
+       "kind": "video",
+       "query": "ultraviolet light sun rays",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s021",
+     "text": "That's why composite surfaces can't be left bare. They have to be painted and protected.",
+     "shots": [
+      {
+       "id": "c02s021a",
+       "kind": "video",
+       "query": "aircraft painting hangar spray",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s022",
+     "text": "A light topcoat does two jobs at once: it blocks the sun's ultraviolet light, and it keeps the structure cooler.",
+     "shots": [
+      {
+       "id": "c02s022a",
+       "kind": "video",
+       "query": "white paint spray coating",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s022b",
+       "kind": "video",
+       "query": "airplane fuselage white paint",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s023",
+     "text": "Even the most famous jet in the world ran into this problem.",
+     "shots": [
+      {
+       "id": "c02s023a",
+       "kind": "video",
+       "query": "presidential airplane runway",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s024",
+     "text": "In 2022, the U.S. Air Force shelved a proposed dark blue paint scheme for the next Air Force One.",
+     "shots": [
+      {
+       "id": "c02s024a",
+       "kind": "video",
+       "query": "dark blue airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s024b",
+       "kind": "video",
+       "query": "air force airplane flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s025",
+     "text": "A thermal study found that the darker colour could push a small number of components past their qualified temperature limits.",
+     "shots": [
+      {
+       "id": "c02s025a",
+       "kind": "video",
+       "query": "thermal camera heat image",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s025b",
+       "kind": "video",
+       "query": "technician checking aircraft components",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s026",
+     "text": "The debate returned in 2026, when a new red, white, gold and dark blue design was approved.",
+     "say": "The debate returned in twenty twenty-six, when a new red, white, gold and dark blue design was approved.",
+     "shots": [
+      {
+       "id": "c02s026a",
+       "kind": "video",
+       "query": "white blue airplane flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s027",
+     "text": "Dark paint isn't impossible on an aircraft. It simply comes with heat that engineers have to account for.",
+     "shots": [
+      {
+       "id": "c02s027a",
+       "kind": "video",
+       "query": "engineer aircraft blueprint",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s028",
+     "text": "But the most dramatic example of all flew at twice the speed of sound.",
+     "shots": [
+      {
+       "id": "c02s028a",
+       "kind": "video",
+       "query": "supersonic jet flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s029",
+     "text": "Concorde cruised at around Mach 2, more than two thousand kilometres an hour.",
+     "say": "Concorde cruised at around Mach two, more than two thousand kilometres an hour.",
+     "shots": [
+      {
+       "id": "c02s029a",
+       "kind": "video",
+       "query": "concorde airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s030",
+     "text": "At that speed, the air itself became a source of heat.",
+     "shots": [
+      {
+       "id": "c02s030a",
+       "kind": "video",
+       "query": "jet flying fast sky",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s031",
+     "text": "Compression and friction warmed the whole airframe, and the tip of the nose reached about 127 degrees Celsius.",
+     "say": "Compression and friction warmed the whole airframe, and the tip of the nose reached about a hundred and twenty-seven degrees Celsius.",
+     "shots": [
+      {
+       "id": "c02s031a",
+       "kind": "video",
+       "query": "concorde nose close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s031b",
+       "kind": "video",
+       "query": "heat glow metal",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s032",
+     "text": "To cope, Concorde wore a special white paint, reported to be about twice as reflective as ordinary airliner white.",
+     "shots": [
+      {
+       "id": "c02s032a",
+       "kind": "video",
+       "query": "concorde white fuselage",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s032b",
+       "kind": "video",
+       "query": "white glossy paint reflection",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s033",
+     "text": "And then, in 1996, Air France painted one of its Concordes blue, for a Pepsi advertising campaign.",
+     "say": "And then, in nineteen ninety-six, Air France painted one of its Concordes blue, for a Pepsi advertising campaign.",
+     "shots": [
+      {
+       "id": "c02s033a",
+       "kind": "video",
+       "query": "blue airplane livery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c02s033b",
+       "kind": "video",
+       "query": "soda can blue",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s034",
+     "text": "The engineers kept the wings white, and the blue aircraft was limited to about twenty minutes at Mach 2 at a time.",
+     "say": "The engineers kept the wings white, and the blue aircraft was limited to about twenty minutes at Mach two at a time.",
+     "shots": [
+      {
+       "id": "c02s034a",
+       "kind": "video",
+       "query": "airplane wing white",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s035",
+     "text": "After the promotion, it went back to white.",
+     "shots": [
+      {
+       "id": "c02s035a",
+       "kind": "video",
+       "query": "concorde museum",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s036",
+     "text": "So the first reason is pure physics.",
+     "shots": [
+      {
+       "id": "c02s036a",
+       "kind": "video",
+       "query": "sun over clouds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s037",
+     "text": "White reflects the sun, protects the materials, and keeps the heat under control.",
+     "shots": [
+      {
+       "id": "c02s037a",
+       "kind": "video",
+       "query": "white airplane flying sun",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c02s038",
+     "text": "It is the strongest reason of all, and it is completely real.",
+     "shots": [
+      {
+       "id": "c02s038a",
+       "kind": "video",
+       "query": "airliner flying blue sky",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c03",
+   "title": "The Price of Paint",
+   "sentences": [
+    {
+     "id": "c03s001",
+     "text": "Now for a claim you'll find almost everywhere.",
+     "shots": [
+      {
+       "id": "c03s001a",
+       "kind": "video",
+       "query": "paint cans colors",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s002",
+     "text": "White paint, people say, is lighter than coloured paint, so white planes burn less fuel.",
+     "shots": [
+      {
+       "id": "c03s002a",
+       "kind": "video",
+       "query": "colorful airplane livery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s003",
+     "text": "It sounds neat, but the evidence behind it is thin.",
+     "shots": [
+      {
+       "id": "c03s003a",
+       "kind": "video",
+       "query": "question mark paper",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s004",
+     "text": "Paint does weigh something.",
+     "shots": [
+      {
+       "id": "c03s004a",
+       "kind": "video",
+       "query": "paint bucket roller",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s005",
+     "text": "Estimates for a full livery on a jumbo jet range from roughly two hundred and fifty to five hundred kilograms.",
+     "shots": [
+      {
+       "id": "c03s005a",
+       "kind": "video",
+       "query": "boeing 747 jumbo jet",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c03s005b",
+       "kind": "video",
+       "query": "airplane livery painted",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s006",
+     "text": "But that weight depends mostly on how much paint goes on, how many layers and how much of the surface they cover, not on the colour itself.",
+     "shots": [
+      {
+       "id": "c03s006a",
+       "kind": "video",
+       "query": "painters spraying aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c03s006b",
+       "kind": "video",
+       "query": "paint layers close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s007",
+     "text": "A complex, multicoloured livery usually means more layers, more masking and more hours in the hangar.",
+     "shots": [
+      {
+       "id": "c03s007a",
+       "kind": "video",
+       "query": "masking tape painting",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s008",
+     "text": "And the lightest option of all is no paint at all.",
+     "shots": [
+      {
+       "id": "c03s008a",
+       "kind": "video",
+       "query": "polished metal aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s009",
+     "text": "For decades, American Airlines flew its jets in polished bare aluminium, partly to save weight and fuel.",
+     "shots": [
+      {
+       "id": "c03s009a",
+       "kind": "video",
+       "query": "polished aluminum airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s010",
+     "text": "Cathay Pacific tried the same trick on a Boeing 747 freighter.",
+     "say": "Cathay Pacific tried the same trick on a Boeing seven forty-seven freighter.",
+     "shots": [
+      {
+       "id": "c03s010a",
+       "kind": "video",
+       "query": "cargo airplane loading",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s011",
+     "text": "Stripping its paint saved around two hundred kilograms, which the airline estimated was worth about one hundred and ninety-five thousand dollars a year in fuel.",
+     "shots": [
+      {
+       "id": "c03s011a",
+       "kind": "video",
+       "query": "cargo plane freighter flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c03s011b",
+       "kind": "video",
+       "query": "jet fuel refueling truck",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s012",
+     "text": "But bare metal has to be polished again and again, and that labour often ate up the savings.",
+     "shots": [
+      {
+       "id": "c03s012a",
+       "kind": "video",
+       "query": "worker polishing metal",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s013",
+     "text": "And composite aircraft can't fly bare at all, which is one reason American Airlines switched to a painted livery in 2013.",
+     "say": "And composite aircraft can't fly bare at all, which is one reason American Airlines switched to a painted livery in twenty thirteen.",
+     "shots": [
+      {
+       "id": "c03s013a",
+       "kind": "video",
+       "query": "airplane fuselage painted",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c03s013b",
+       "kind": "video",
+       "query": "carbon fiber aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s014",
+     "text": "The real money story isn't the weight of the paint.",
+     "shots": [
+      {
+       "id": "c03s014a",
+       "kind": "video",
+       "query": "money coins counting",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s015",
+     "text": "It's how long the paint lasts.",
+     "shots": [
+      {
+       "id": "c03s015a",
+       "kind": "video",
+       "query": "old faded paint texture",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s016",
+     "text": "Sunlight slowly breaks down pigments.",
+     "shots": [
+      {
+       "id": "c03s016a",
+       "kind": "video",
+       "query": "sun rays through clouds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s017",
+     "text": "Bright colours fade and turn chalky, and an aircraft can start to look tired years before its paint is actually worn out.",
+     "shots": [
+      {
+       "id": "c03s017a",
+       "kind": "video",
+       "query": "faded paint peeling",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c03s017b",
+       "kind": "video",
+       "query": "old airplane parked",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s018",
+     "text": "White fades more gracefully, so a white fuselage can stay presentable for longer.",
+     "shots": [
+      {
+       "id": "c03s018a",
+       "kind": "video",
+       "query": "clean white airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s019",
+     "text": "That matters, because repainting an airliner is a big job.",
+     "shots": [
+      {
+       "id": "c03s019a",
+       "kind": "video",
+       "query": "aircraft hangar large",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s020",
+     "text": "Airlines typically strip and repaint each aircraft every five to seven years or so.",
+     "shots": [
+      {
+       "id": "c03s020a",
+       "kind": "video",
+       "query": "paint stripping aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s021",
+     "text": "Depending on the aircraft, the work can keep it in the hangar for one to three weeks.",
+     "shots": [
+      {
+       "id": "c03s021a",
+       "kind": "video",
+       "query": "aircraft in hangar time lapse",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s022",
+     "text": "For a widebody, a full repaint is commonly quoted at one hundred and fifty to three hundred thousand dollars.",
+     "shots": [
+      {
+       "id": "c03s022a",
+       "kind": "video",
+       "query": "wide body aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s023",
+     "text": "And every day in the paint shop is a day the aircraft isn't flying passengers and earning money.",
+     "shots": [
+      {
+       "id": "c03s023a",
+       "kind": "video",
+       "query": "empty runway airport",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s024",
+     "text": "So the economic case for white is not lighter paint.",
+     "shots": [
+      {
+       "id": "c03s024a",
+       "kind": "video",
+       "query": "white airplane taxiing",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c03s025",
+     "text": "It's paint that stays looking good for longer, and costs less to keep that way.",
+     "shots": [
+      {
+       "id": "c03s025a",
+       "kind": "video",
+       "query": "airplane in sunset",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c04",
+   "title": "Easier to Inspect",
+   "sentences": [
+    {
+     "id": "c04s001",
+     "text": "Every airliner is inspected constantly.",
+     "shots": [
+      {
+       "id": "c04s001a",
+       "kind": "video",
+       "query": "aircraft mechanic inspection",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s002",
+     "text": "Pilots and engineers walk around it before flights, and it goes through deeper checks in the hangar.",
+     "shots": [
+      {
+       "id": "c04s002a",
+       "kind": "video",
+       "query": "pilot walk around airplane",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s003",
+     "text": "They're looking for dents, cracks and corrosion, and for the dark streaks left by leaking oil or hydraulic fluid.",
+     "shots": [
+      {
+       "id": "c04s003a",
+       "kind": "video",
+       "query": "aircraft fuselage dent",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s004",
+     "text": "On a clean white surface, those problems stand out.",
+     "shots": [
+      {
+       "id": "c04s004a",
+       "kind": "video",
+       "query": "white aircraft fuselage panel",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s005",
+     "text": "A streak of oil on white is hard to miss.",
+     "shots": [
+      {
+       "id": "c04s005a",
+       "kind": "video",
+       "query": "technician flashlight aircraft",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s006",
+     "text": "The same streak on a dark blue panel can be much harder to see, especially at night, under a flashlight.",
+     "shots": [
+      {
+       "id": "c04s006a",
+       "kind": "video",
+       "query": "night airport maintenance",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s007",
+     "text": "Dents catch the light differently, and the edges of panels and rows of rivets are easier to follow.",
+     "shots": [
+      {
+       "id": "c04s007a",
+       "kind": "video",
+       "query": "rivets aircraft close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s008",
+     "text": "Industry sources describe this as a genuine practical advantage, even though it is hard to put a number on it.",
+     "shots": [
+      {
+       "id": "c04s008a",
+       "kind": "video",
+       "query": "mechanic tablet inspection",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s009",
+     "text": "It isn't the main reason planes are white.",
+     "shots": [
+      {
+       "id": "c04s009a",
+       "kind": "video",
+       "query": "white airplane hangar doors",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s010",
+     "text": "But maintenance teams benefit from it every single day.",
+     "shots": [
+      {
+       "id": "c04s010a",
+       "kind": "video",
+       "query": "aircraft engineers team",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c04s011",
+     "text": "And on an aircraft, catching small problems early is exactly the point.",
+     "shots": [
+      {
+       "id": "c04s011a",
+       "kind": "video",
+       "query": "aircraft engine inspection",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c05",
+   "title": "What Do Birds See?",
+   "sentences": [
+    {
+     "id": "c05s001",
+     "text": "Bird strikes are a real hazard for aviation.",
+     "shots": [
+      {
+       "id": "c05s001a",
+       "kind": "video",
+       "query": "birds near airport runway",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s002",
+     "text": "Thousands are reported every year in the United States alone.",
+     "shots": [
+      {
+       "id": "c05s002a",
+       "kind": "video",
+       "query": "flock of birds flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s003",
+     "text": "Most are harmless, but a few are serious.",
+     "shots": [
+      {
+       "id": "c05s003a",
+       "kind": "video",
+       "query": "geese flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s004",
+     "text": "In 2009, geese knocked out both engines of US Airways Flight 1549, which ended up landing on the Hudson River.",
+     "say": "In two thousand nine, geese knocked out both engines of US Airways flight fifteen forty-nine, which ended up landing on the Hudson River.",
+     "shots": [
+      {
+       "id": "c05s004a",
+       "kind": "video",
+       "query": "hudson river new york",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c05s004b",
+       "kind": "video",
+       "query": "airplane engine close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s005",
+     "text": "You'll often hear that planes are painted white so that birds can see them and get out of the way.",
+     "shots": [
+      {
+       "id": "c05s005a",
+       "kind": "video",
+       "query": "bird eye close up",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s006",
+     "text": "The science on this is far less certain.",
+     "shots": [
+      {
+       "id": "c05s006a",
+       "kind": "video",
+       "query": "scientist laboratory",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s007",
+     "text": "Birds see colour differently from us, and many species can see ultraviolet light.",
+     "shots": [
+      {
+       "id": "c05s007a",
+       "kind": "video",
+       "query": "bird vision colorful feathers",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s008",
+     "text": "In 2011, a team led by biologist Esteban Fernández-Juricic compared bird strike records with airline colour schemes.",
+     "say": "In twenty eleven, a team led by biologist Esteban Fernandez Hurisitch compared bird strike records with airline colour schemes.",
+     "shots": [
+      {
+       "id": "c05s008a",
+       "kind": "video",
+       "query": "research papers data",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c05s008b",
+       "kind": "video",
+       "query": "airplane landing birds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s009",
+     "text": "For three of the seven aircraft types they studied, brighter fuselages were linked to fewer strikes.",
+     "shots": [
+      {
+       "id": "c05s009a",
+       "kind": "video",
+       "query": "chart data graph",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s010",
+     "text": "Their idea was that a bright aircraft contrasts more with the sky, so birds might spot it sooner.",
+     "shots": [
+      {
+       "id": "c05s010a",
+       "kind": "video",
+       "query": "white airplane against sky",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s011",
+     "text": "But the researchers called their results suggestive, not proof.",
+     "shots": [
+      {
+       "id": "c05s011a",
+       "kind": "video",
+       "query": "bird flying slow motion",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s012",
+     "text": "Since then, much of the research has focused on aircraft lights rather than paint.",
+     "shots": [
+      {
+       "id": "c05s012a",
+       "kind": "video",
+       "query": "airplane landing lights night",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s013",
+     "text": "So white might help a little with birds.",
+     "shots": [
+      {
+       "id": "c05s013a",
+       "kind": "video",
+       "query": "seagull flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c05s014",
+     "text": "But that isn't why airlines choose it, and as a safety feature it remains unproven.",
+     "shots": [
+      {
+       "id": "c05s014a",
+       "kind": "video",
+       "query": "airplane taking off birds",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "title": "Planes for Rent",
+   "sentences": [
+    {
+     "id": "c06s001",
+     "text": "Here's a reason most passengers never think about.",
+     "shots": [
+      {
+       "id": "c06s001a",
+       "kind": "video",
+       "query": "passengers airport terminal",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s002",
+     "text": "Many airlines don't actually own the planes they fly.",
+     "shots": [
+      {
+       "id": "c06s002a",
+       "kind": "video",
+       "query": "airline fleet parked",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s003",
+     "text": "Roughly half of the world's commercial aircraft are leased.",
+     "shots": [
+      {
+       "id": "c06s003a",
+       "kind": "video",
+       "query": "many airplanes parked airport aerial",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s004",
+     "text": "Airlines rent them from leasing companies, often for years at a time.",
+     "shots": [
+      {
+       "id": "c06s004a",
+       "kind": "video",
+       "query": "business contract handshake",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s005",
+     "text": "When a lease ends, the aircraft moves on to a new operator, sometimes on the other side of the world.",
+     "shots": [
+      {
+       "id": "c06s005a",
+       "kind": "video",
+       "query": "airplane flying over world",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s006",
+     "text": "A new operator means a new look.",
+     "shots": [
+      {
+       "id": "c06s006a",
+       "kind": "video",
+       "query": "airplane livery tail",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s007",
+     "text": "If the plane is mostly white, the job is relatively simple.",
+     "shots": [
+      {
+       "id": "c06s007a",
+       "kind": "video",
+       "query": "white airplane no livery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s008",
+     "text": "Repaint the tail, the engines and the titles, and most of the fuselage can often stay as it is.",
+     "shots": [
+      {
+       "id": "c06s008a",
+       "kind": "video",
+       "query": "painting airplane tail",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s009",
+     "text": "A fully coloured fuselage may have to be stripped and repainted from nose to tail.",
+     "shots": [
+      {
+       "id": "c06s009a",
+       "kind": "video",
+       "query": "paint stripping airplane hangar",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s010",
+     "text": "That costs money, and it keeps the aircraft out of service while the work is done.",
+     "shots": [
+      {
+       "id": "c06s010a",
+       "kind": "video",
+       "query": "aircraft hangar time lapse",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s011",
+     "text": "So lessors, and buyers on the second hand market, tend to prefer white.",
+     "shots": [
+      {
+       "id": "c06s011a",
+       "kind": "video",
+       "query": "airplane storage desert",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s012",
+     "text": "A white aircraft is easier to hand over to the next customer.",
+     "shots": [
+      {
+       "id": "c06s012a",
+       "kind": "video",
+       "query": "airplane delivery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s013",
+     "text": "The same logic helps airlines themselves.",
+     "shots": [
+      {
+       "id": "c06s013a",
+       "kind": "video",
+       "query": "airline office business",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s014",
+     "text": "New airlines, mergers and rebrands all move faster on a white canvas.",
+     "shots": [
+      {
+       "id": "c06s014a",
+       "kind": "video",
+       "query": "white airplane hangar new",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s015",
+     "text": "In fact, a white fuselage with a bold tail has become the standard template of airline branding.",
+     "shots": [
+      {
+       "id": "c06s015a",
+       "kind": "video",
+       "query": "colorful airplane tails row",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s016",
+     "text": "There are exceptions.",
+     "shots": [
+      {
+       "id": "c06s016a",
+       "kind": "video",
+       "query": "colorful airplane flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s017",
+     "text": "Some airlines choose deep blues, bright greens or even all-black special schemes, and accept the extra cost.",
+     "shots": [
+      {
+       "id": "c06s017a",
+       "kind": "video",
+       "query": "dark airplane livery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c06s017b",
+       "kind": "video",
+       "query": "green airplane flying",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s018",
+     "text": "For them, the livery is a flying billboard, and the advertising is worth it.",
+     "shots": [
+      {
+       "id": "c06s018a",
+       "kind": "video",
+       "query": "airplane advertising livery",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s019",
+     "text": "But for most of the industry, white is the default for a simple reason.",
+     "shots": [
+      {
+       "id": "c06s019a",
+       "kind": "video",
+       "query": "white airplanes parked row",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c06s020",
+     "text": "It keeps options open.",
+     "shots": [
+      {
+       "id": "c06s020a",
+       "kind": "video",
+       "query": "airplane runway open sky",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c07",
+   "title": "A Coat of Many Reasons",
+   "sentences": [
+    {
+     "id": "c07s001",
+     "text": "So why are airplanes white?",
+     "shots": [
+      {
+       "id": "c07s001a",
+       "kind": "video",
+       "query": "white airplane sunset silhouette",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c07s002",
+     "text": "Mainly because white reflects the sun, protecting the airframe and keeping the cabin cooler.",
+     "shots": [
+      {
+       "id": "c07s002a",
+       "kind": "video",
+       "query": "white airplane flying sun",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c07s003",
+     "text": "It fades gracefully, it makes damage easier to spot, and it lets an aircraft change hands with a simpler repaint.",
+     "shots": [
+      {
+       "id": "c07s003a",
+       "kind": "video",
+       "query": "airplane maintenance hangar",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c07s004",
+     "text": "The paint isn't really lighter, and the birds probably weren't consulted.",
+     "shots": [
+      {
+       "id": "c07s004a",
+       "kind": "video",
+       "query": "birds flying sunset",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    },
+    {
+     "id": "c07s005",
+     "text": "But the next time you see a row of white jets at sunrise, you'll know that plain colour is one of the smartest engineering choices in the sky.",
+     "shots": [
+      {
+       "id": "c07s005a",
+       "kind": "video",
+       "query": "airport sunrise airplanes row",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      },
+      {
+       "id": "c07s005b",
+       "kind": "video",
+       "query": "airplane takeoff golden hour",
+       "providers": [
+        "pixabay"
+       ],
+       "weight": 1,
+       "pick": null,
+       "in_point": 0.0,
+       "motion": "none",
+       "overlay": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
