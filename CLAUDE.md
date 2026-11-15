@@ -41,9 +41,10 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
 - Video content is English. Talk to the owner in **Vietnamese**.
 - When the owner must check a file, give its **absolute path** (they download it over SFTP),
   or the Drive folder once publish exists.
-- Commit after each completed step. The VPS has **no push rights** (no deploy key, by the
-  owner's choice): it pulls the public repo over HTTPS and commits locally. Ask the owner
-  how to get commits to GitHub. Never commit `.env`, media, models or videos.
+- Commit after each completed step, but **never push**. The VPS has no deploy key (owner's
+  choice); the owner pushes from the VPS with their own GitHub credentials. When a step is
+  done, tell the owner it is committed and ready for them to `git push`. Run `git pull` at the
+  start of a session. Never commit `.env`, media, models or videos.
 - Never print, log or commit the Pixabay key.
 
 ## Resource rules (2 vCPU, 3.8 GB RAM VPS)
