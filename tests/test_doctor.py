@@ -51,6 +51,13 @@ def test_pixabay_bad_key_fails_without_leaking_key():
     assert c.status == "fail" and "SECRETKEY" not in c.detail + c.fix
 
 
+def test_http_requests_send_project_user_agent():
+    # Pixabay's Cloudflare returns 403 (error 1010) for the default "Python-urllib" agent.
+    req = d._build_request("https://pixabay.com/api/videos/?q=x")
+    ua = req.get_header("User-agent")
+    assert ua and "CineFacts" in ua and "Python-urllib" not in ua
+
+
 def test_disk_warn_below_5gib():
     assert d.check_disk(4 * 1024**3).status == "warn"
     assert d.check_disk(20 * 1024**3).status == "ok"

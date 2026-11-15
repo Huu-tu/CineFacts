@@ -10,6 +10,9 @@ STYLES_DIR: Path = REPO_ROOT / "styles"
 ASSETS_DIR: Path = REPO_ROOT / "assets"
 PROJECTS_DIR: Path = REPO_ROOT / "projects"
 
+# Sent on every HTTP request. Pixabay (Cloudflare) rejects the default "Python-urllib" agent.
+USER_AGENT = "CineFacts/0.1 (+https://github.com/Huu-tu/CineFacts)"
+
 REQUIRED_STYLE_KEYS: tuple[str, ...] = (
     "resolution", "fps", "preview", "final", "voice", "speed",
     "pause_sentence", "pause_chapter", "chapter_fade", "grade",

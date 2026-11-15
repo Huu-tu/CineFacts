@@ -167,9 +167,13 @@ def _run(cmd: list[str]) -> tuple[int, str]:
         return 127, str(e)
 
 
+def _build_request(url: str) -> urllib.request.Request:
+    return urllib.request.Request(url, headers={"User-Agent": config.USER_AGENT})
+
+
 def _http_get(url: str) -> tuple[int, str]:
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        with urllib.request.urlopen(_build_request(url), timeout=10) as r:
             return r.status, r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         return e.code, e.read().decode("utf-8", "replace")
