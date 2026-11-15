@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# CineFacts entry point: ./run <step> [project_id] [options]
+set -euo pipefail
+cd "$(dirname "$(readlink -f "$0")")"
+if [ -x .venv/bin/python ]; then
+  PY=.venv/bin/python
+else
+  PY=python3
+  echo "note: .venv not found, using system python3 (run ./setup.sh)" >&2
+fi
+exec "$PY" -m cinefacts "$@"

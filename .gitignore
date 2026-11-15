@@ -1,0 +1,22 @@
+# secrets
+.env
+
+# environments, models, caches
+.venv/
+models/
+__pycache__/
+*.pyc
+.pytest_cache/
+.superpowers/
+
+# third-party reference frames and user-supplied music (not redistributable)
+assets/reference/
+assets/music/*
+!assets/music/.gitkeep
+
+# project artifacts: only the text files are versioned
+projects/*/*
+!projects/*/storyboard.md
+!projects/*/facts.md
+!projects/*/plan.json
+!projects/*/script.md
