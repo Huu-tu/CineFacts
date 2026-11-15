@@ -33,3 +33,4 @@ projects/*/*
 !projects/*/facts.md
 !projects/*/plan.json
 !projects/*/script.md
+.heavy.lock

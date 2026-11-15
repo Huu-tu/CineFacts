@@ -14,8 +14,24 @@ list, clip picks); scripts do everything deterministic. Full design:
 | `./run doctor --offline` | same, without the live Pixabay call |
 | `.venv/bin/python -m pytest -q` | run the tests |
 
-Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `publish`, `clean`,
-`all`) are wired into `./run` but print "not implemented yet" until their roadmap step lands.
+Pipeline steps (all take a project id; `shots`, `assemble`, `all` take `--preview` for 720p):
+
+| Command | What it does |
+|---|---|
+| `./run script <id>` | validate `plan.json`, regenerate `script.md` (cheap, no lock) |
+| `./run voices <id> [--voices a,b,c]` | short voice samples to `out/voices/<voice>.wav` |
+| `./run tts <id>` | Kokoro per sentence (`audio/`, cached by text+voice+speed+model), `narration.wav`, `timeline.json`, `script.md` |
+| `./run shots <id> [--preview]` | one cached clip per shot in `cache/shots/` (placeholder cards until step 3) |
+| `./run assemble <id> [--preview]` | concat clips, normalise narration (compressor → gain → 192 kHz true-peak limiter), mux to `out/preview_720p.mp4` / `out/final.mp4` |
+| `./run subs <id>` | `out/subs.srt`, `out/chapters.txt` (cheap, no lock) |
+| `./run all <id> [--preview]` | tts → shots → assemble → subs, redoing only what changed |
+
+`search`, `fetch` (step 3), `publish`, `clean` (step 4) and `qa` (step 5) still print
+"not implemented yet". Heavy steps re-exec themselves under `systemd-run --scope -p MemoryMax`
++ `nice`/`ionice` and take `.heavy.lock`; progress is appended to `projects/<id>/render.log`.
+Set `CINEFACTS_NO_GUARD=1` to skip the wrapper (tests, debugging). Editing `plan.json` never
+needs a full re-run: shots/subs/assemble rebuild `timeline.json` from cached audio, and only
+sentences whose spoken text changed are re-synthesised.
 
 ### Google Drive setup (one time, owner)
 
@@ -61,6 +77,18 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
   No Node.js is needed, which differs from the spec's "Node.js LTS".
 - Pexels API key issuance is paused (2026-11), so Pixabay is the primary stock provider.
 - 2026-11-15: the repo was made public and the deploy key was dropped (owner's decision).
+- 2026-11-15: Kokoro **fp32** model kept (`kokoro-v1.0.onnx`): ~0.9x real time on 2 vCPU,
+  ~600 MB RSS, so a 10-min narration takes ~10 min once and is cached per sentence afterwards.
+- 2026-11-15: timing model. Audio positions are integer samples (24 kHz = 1000 samples per
+  frame); each shot boundary is snapped to the frame grid independently (cumulative rounding).
+  0.5 s lead-in belongs to the first shot; each pause belongs to the shot before it. Chapter
+  boundaries dip to black (`chapter_fade` each side, baked into the clips). Kokoro output is
+  trimmed at -45 dB with 40/80 ms margins so pauses come only from the style.
+- 2026-11-15: audio normalisation is not ffmpeg `loudnorm` (see errors table). The chain is a
+  gentle compressor, gain measured with `ebur128` (corrected up to 3 times), and an `alimiter`
+  at 192 kHz set 1 dB under the ceiling: demo narration lands at -14.2 LUFS, -1.8 dBTP after AAC.
+- 2026-11-15: plan.json for a new project may be authored from a compact text draft, but once
+  committed, plan.json is edited directly and IDs never change.
 
 ## Errors we hit and fixes
 
@@ -70,3 +98,4 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
 | 2026-11-15 | `claude: command not found` after setup | the native installer puts it in `~/.local/bin`, which is not on PATH in minimal Ubuntu | setup.sh appends the PATH line to `~/.bashrc`; open a new shell or `source ~/.bashrc` |
 | 2026-11-15 | `git clone` asks for a username | repo was private | owner made the repo public (no deploy key) |
 | 2026-11-15 | `rclone config create gdrive drive token='eyJ...'` hangs | `rclone authorize` prints a base64 wrapper `{client_id, client_secret, token}`; `config create` wants the inner `token` JSON and otherwise waits for interactive auth | decode it: `T=$(echo '<blob>' \| base64 -d \| python3 -c 'import json,sys;print(json.load(sys.stdin)["token"])')`, then `rclone config create gdrive drive scope=drive.file token="$T" --non-interactive` (or paste the blob into the interactive `rclone config` prompt) |
+| 2026-11-15 | preview at -15.3 LUFS instead of -14; later true peak +0.2 dBTP | Kokoro speech has a ~24 dB peak-to-loudness ratio, so two-pass `loudnorm` falls back to dynamic mode and undershoots; `alimiter` at 24 kHz only limits sample peaks | compressor + measured gain + limiter run at 192 kHz (`render.normalize_audio`) |

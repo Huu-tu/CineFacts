@@ -5,6 +5,7 @@
   "final": { "x264_preset": "medium", "crf": 18 },
   "voice": "am_michael",
   "speed": 1.0,
+  "lead_in": 0.5,
   "pause_sentence": 0.35,
   "pause_chapter": 1.2,
   "chapter_fade": 0.5,

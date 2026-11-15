@@ -19,7 +19,7 @@ from cinefacts import config
 GIB = 1024 ** 3
 PIXABAY_TEST_URL = "https://pixabay.com/api/videos/?key={key}&q=airplane&per_page=3"
 FFMPEG_ENCODERS = ("libx264",)
-FFMPEG_FILTERS = ("loudnorm", "drawtext", "ass", "scale", "crop", "concat")
+FFMPEG_FILTERS = ("acompressor", "alimiter", "ebur128", "drawtext", "scale", "crop", "concat")
 PY_MODULES = ("kokoro_onnx", "onnxruntime", "soundfile", "requests", "PIL", "pytest")
 MODEL_FILES = (("kokoro-v1.0.onnx", 300_000_000), ("voices-v1.0.bin", 25_000_000))
 BINARIES = (

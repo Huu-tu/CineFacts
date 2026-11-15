@@ -7,13 +7,13 @@ def test_binary_missing_gives_fail_with_fix():
 
 
 def test_ffmpeg_features_missing_libx264():
-    c = d.check_ffmpeg_features("V..... libx265", "loudnorm drawtext ass scale crop concat")
+    c = d.check_ffmpeg_features("V..... libx265", "acompressor alimiter ebur128 drawtext scale crop concat")
     assert c.status == "fail" and "libx264" in c.detail
 
 
 def test_ffmpeg_features_all_present():
     enc = " V....D libx264  H.264"
-    flt = " loudnorm\n drawtext\n ass\n scale\n crop\n concat\n"
+    flt = " acompressor\n alimiter\n ebur128\n drawtext\n scale\n crop\n concat\n"
     assert d.check_ffmpeg_features(enc, flt).status == "ok"
 
 
