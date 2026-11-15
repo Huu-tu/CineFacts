@@ -9,10 +9,23 @@ __pycache__/
 .pytest_cache/
 .superpowers/
 
-# third-party reference frames and user-supplied music (not redistributable)
+# third-party reference frames, music and sfx (not redistributable)
 assets/reference/
 assets/music/*
 !assets/music/.gitkeep
+assets/sfx/*
+!assets/sfx/.gitkeep
+
+# no media anywhere in this public repo
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
 
 # project artifacts: only the text files are versioned
 projects/*/*

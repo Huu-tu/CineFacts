@@ -51,6 +51,34 @@ def test_pixabay_bad_key_fails_without_leaking_key():
     assert c.status == "fail" and "SECRETKEY" not in c.detail + c.fix
 
 
+def test_pixabay_null_total_hits_fails_cleanly():
+    c = d.check_pixabay("SECRETKEY", lambda url: (200, '{"totalHits": null}'))
+    assert c.status == "fail"
+
+
+def test_pixabay_key_scrubbed_before_truncation():
+    body = "x" * 115 + "SECRETKEY" + "y" * 50   # key straddles the 120-char cut
+    c = d.check_pixabay("SECRETKEY", lambda url: (500, body))
+    assert "SECRE" not in c.detail
+
+
+def test_run_checks_survives_unreadable_env(monkeypatch):
+    def boom(path=None):
+        raise PermissionError("[Errno 13] Permission denied: '.env'")
+    monkeypatch.setattr(d.config, "load_env", boom)
+    checks = d.run_checks(offline=True)
+    env = [c for c in checks if c.name == ".env PIXABAY_API_KEY"]
+    assert env and env[0].status == "fail" and "Permission denied" in env[0].detail
+
+
+def test_main_backstop_turns_crash_into_fail(monkeypatch, capsys):
+    def boom(offline):
+        raise RuntimeError("unexpected")
+    monkeypatch.setattr(d, "run_checks", boom)
+    assert d.main() == 1
+    assert "[FAIL] doctor: unexpected" in capsys.readouterr().out
+
+
 def test_http_requests_send_project_user_agent():
     # Pixabay's Cloudflare returns 403 (error 1010) for the default "Python-urllib" agent.
     req = d._build_request("https://pixabay.com/api/videos/?q=x")

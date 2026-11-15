@@ -11,10 +11,9 @@ die() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
 
 [ "$(uname -s)" = "Linux" ] || die "setup.sh targets Ubuntu 24.04 Linux."
 command -v apt-get >/dev/null || die "apt-get not found; setup.sh targets Ubuntu 24.04."
-if [ "$(id -u)" -ne 0 ]; then
-  command -v sudo >/dev/null || die "run as root."
-  exec sudo -E bash "$0" "$@"
-fi
+# Root-only by design (spec: the VPS runs everything as root in /root/CineFacts). A sudo re-exec
+# would leave root-owned .venv/models/.env inside a normal user's checkout.
+[ "$(id -u)" -eq 0 ] || die "run as root (sudo -i, then cd /root/CineFacts && ./setup.sh)."
 
 # ---------------------------------------------------------------- system packages
 export DEBIAN_FRONTEND=noninteractive

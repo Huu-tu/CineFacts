@@ -14,6 +14,12 @@ def test_parse_env_handles_windows_and_shell_styles():
     assert "# comment" not in env
 
 
+def test_load_env_strips_utf8_bom_from_windows_notepad(tmp_path):
+    f = tmp_path / ".env"
+    f.write_bytes("﻿PIXABAY_API_KEY=abc\r\n".encode("utf-8"))
+    assert config.load_env(f) == {"PIXABAY_API_KEY": "abc"}
+
+
 def test_load_env_missing_file_returns_empty(tmp_path):
     assert config.load_env(tmp_path / "nope.env") == {}
 

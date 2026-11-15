@@ -110,11 +110,13 @@ def check_pixabay(key: str, http_get) -> Check:
     except Exception as e:  # network errors, timeouts, DNS: report, never crash
         return Check(name, "fail", scrub(f"request failed: {e}"), fix)
     if status != 200:
-        return Check(name, "fail", scrub(f"HTTP {status}: {body[:120]}"), fix)
+        return Check(name, "fail", f"HTTP {status}: " + scrub(body)[:120], fix)
     try:
         hits = json.loads(body).get("totalHits", 0)
     except (ValueError, AttributeError):
         return Check(name, "fail", "unexpected response (not JSON)", fix)
+    if not isinstance(hits, int):
+        return Check(name, "fail", "unexpected response (no totalHits)", fix)
     if hits > 0:
         return Check(name, "ok", f"key works ({hits} hits for 'airplane')")
     return Check(name, "fail", "key accepted but no results", fix)
@@ -183,12 +185,12 @@ def _read(path: str) -> str:
     return Path(path).read_text(encoding="utf-8", errors="replace")
 
 
-def _guard(name: str, fn) -> Check:
-    """Run a check; an unexpected error becomes a warn line instead of a traceback."""
+def _guard(name: str, fn, status: str = "warn", fix: str = "") -> Check:
+    """Run a check; an unexpected error becomes a status line instead of a traceback."""
     try:
         return fn()
     except Exception as e:
-        return Check(name, "warn", f"could not check: {e}")
+        return Check(name, status, f"could not check: {e}", fix)
 
 
 def run_checks(offline: bool) -> list[Check]:
@@ -216,12 +218,19 @@ def run_checks(offline: bool) -> list[Check]:
     else:
         checks.append(Check("font Inter", "fail", "fc-list missing", "sudo apt install -y fontconfig fonts-inter"))
 
-    checks.append(check_python_modules())
+    checks.append(_guard("python modules", check_python_modules, "fail", "./setup.sh"))
     for fname, min_bytes in MODEL_FILES:
-        checks.append(check_model_file(config.MODELS_DIR / fname, min_bytes))
+        checks.append(_guard(f"model {fname}",
+                             lambda p=config.MODELS_DIR / fname, m=min_bytes: check_model_file(p, m),
+                             "fail", "./setup.sh"))
 
-    env = config.load_env()
-    checks.append(check_env(env))
+    try:
+        env = config.load_env()
+        checks.append(check_env(env))
+    except Exception as e:  # unreadable, wrong encoding, wrong owner
+        env = {}
+        checks.append(Check(".env PIXABAY_API_KEY", "fail", f"cannot read .env: {e}",
+                            "re-save .env as UTF-8 and make it readable by this user"))
     if offline:
         checks.append(Check("pixabay api", "warn", "skipped (--offline)"))
     elif env.get("PIXABAY_API_KEY", "").strip():
@@ -257,6 +266,10 @@ def exit_code(checks: list[Check]) -> int:
 
 
 def main(offline: bool = False) -> int:
-    checks = run_checks(offline)
+    try:
+        checks = run_checks(offline)
+    except Exception as e:  # backstop: doctor must never end in a traceback
+        print(f"[FAIL] doctor: {e}\n       fix: report this error; re-run ./setup.sh")
+        return 1
     print(format_report(checks))
     return exit_code(checks)

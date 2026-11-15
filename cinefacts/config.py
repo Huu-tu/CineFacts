@@ -43,7 +43,8 @@ def parse_env(text: str) -> dict[str, str]:
 def load_env(path: Path | None = None) -> dict[str, str]:
     path = path or REPO_ROOT / ".env"
     try:
-        return parse_env(path.read_text(encoding="utf-8"))
+        # utf-8-sig drops the BOM that Windows Notepad writes ("UTF-8 with BOM")
+        return parse_env(path.read_text(encoding="utf-8-sig"))
     except FileNotFoundError:
         return {}
 
