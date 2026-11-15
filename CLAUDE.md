@@ -65,3 +65,6 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
 
 | Date | Symptom | Cause | Fix |
 |---|---|---|---|
+| 2026-11-15 | Pixabay API returns `HTTP 403`, body `error code: 1010` (curl works) | Cloudflare blocks the default `Python-urllib` User-Agent | Send `config.USER_AGENT` on **every** HTTP request (providers too) |
+| 2026-11-15 | `claude: command not found` after setup | the native installer puts it in `~/.local/bin`, which is not on PATH in minimal Ubuntu | setup.sh appends the PATH line to `~/.bashrc`; open a new shell or `source ~/.bashrc` |
+| 2026-11-15 | `git clone` asks for a username | repo was private | owner made the repo public (no deploy key) |
