@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # CineFacts one-command installer for Ubuntu 24.04. Safe to re-run (idempotent).
 #   ./setup.sh               install / repair everything
-#   ./setup.sh --deploy-key  create a GitHub deploy key so this VPS can push
 set -euo pipefail
 
 cd "$(dirname "$(readlink -f "$0")")"
@@ -15,30 +14,6 @@ command -v apt-get >/dev/null || die "apt-get not found; setup.sh targets Ubuntu
 if [ "$(id -u)" -ne 0 ]; then
   command -v sudo >/dev/null || die "run as root."
   exec sudo -E bash "$0" "$@"
-fi
-
-# ---------------------------------------------------------------- deploy key mode
-if [ "${1:-}" = "--deploy-key" ]; then
-  KEY=/root/.ssh/cinefacts_deploy
-  mkdir -p /root/.ssh && chmod 700 /root/.ssh
-  if [ ! -f "$KEY" ]; then
-    say "Creating deploy key $KEY"
-    ssh-keygen -t ed25519 -N "" -C cinefacts-vps -f "$KEY" >/dev/null
-  fi
-  touch /root/.ssh/config && chmod 600 /root/.ssh/config
-  if ! grep -q "^Host github-cinefacts$" /root/.ssh/config; then
-    printf '\nHost github-cinefacts\n  HostName github.com\n  User git\n  IdentityFile %s\n  IdentitiesOnly yes\n' "$KEY" >> /root/.ssh/config
-  fi
-  touch /root/.ssh/known_hosts
-  if ! ssh-keygen -F github.com >/dev/null 2>&1; then
-    ssh-keyscan -t ed25519 github.com >> /root/.ssh/known_hosts 2>/dev/null
-  fi
-  git -C "$REPO_DIR" remote set-url origin git@github-cinefacts:Huu-tu/CineFacts.git
-  say "Add this public key on GitHub: repo Huu-tu/CineFacts -> Settings -> Deploy keys -> Add deploy key"
-  say "Tick 'Allow write access'. Key:"
-  cat "$KEY.pub"
-  say "Then test with:  ssh -T git@github-cinefacts"
-  exit 0
 fi
 
 # ---------------------------------------------------------------- system packages
@@ -114,6 +89,5 @@ cat <<EOF
 ==> Next steps
   a) Put your Pixabay key in .env:   nano $REPO_DIR/.env   then run:  ./run doctor
   b) Log in to Claude Code once:     claude
-  c) Let this VPS push to GitHub:    ./setup.sh --deploy-key
-  d) Authorise Google Drive:         rclone config   (see CLAUDE.md, "Google Drive setup")
+  c) Authorise Google Drive:         rclone config   (see CLAUDE.md, "Google Drive setup")
 EOF

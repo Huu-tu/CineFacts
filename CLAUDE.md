@@ -10,7 +10,6 @@ list, clip picks); scripts do everything deterministic. Full design:
 | Command | What it does |
 |---|---|
 | `./setup.sh` | install or repair everything (Ubuntu 24.04, run as root, safe to re-run) |
-| `./setup.sh --deploy-key` | create the GitHub deploy key so the VPS can push |
 | `./run doctor` | check the environment; every FAIL line prints its fix |
 | `./run doctor --offline` | same, without the live Pixabay call |
 | `.venv/bin/python -m pytest -q` | run the tests |
@@ -42,7 +41,9 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
 - Video content is English. Talk to the owner in **Vietnamese**.
 - When the owner must check a file, give its **absolute path** (they download it over SFTP),
   or the Drive folder once publish exists.
-- Commit and push after each completed step. Never commit `.env`, media, models or videos.
+- Commit after each completed step. The VPS has **no push rights** (no deploy key, by the
+  owner's choice): it pulls the public repo over HTTPS and commits locally. Ask the owner
+  how to get commits to GitHub. Never commit `.env`, media, models or videos.
 - Never print, log or commit the Pixabay key.
 
 ## Resource rules (2 vCPU, 3.8 GB RAM VPS)
@@ -58,6 +59,7 @@ Pipeline steps (`tts`, `search`, `fetch`, `shots`, `assemble`, `subs`, `qa`, `pu
 - Claude Code is installed with the native installer (`curl -fsSL https://claude.ai/install.sh | bash`).
   No Node.js is needed, which differs from the spec's "Node.js LTS".
 - Pexels API key issuance is paused (2026-11), so Pixabay is the primary stock provider.
+- 2026-11-15: the repo was made public and the deploy key was dropped (owner's decision).
 
 ## Errors we hit and fixes
 

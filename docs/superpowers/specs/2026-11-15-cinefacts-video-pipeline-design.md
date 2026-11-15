@@ -67,7 +67,7 @@ shot only redoes the work that depends on it.
 | Storage | Owner chose **Google Drive via rclone** for long-term storage (free 15 GB, shared with Gmail, so about 20 finals). rclone uses the `drive.file` scope, so it can only see files it created itself. Authorisation is a one-time owner step (headless flow: `rclone authorize "drive"` on a machine with a browser). A final is about 0.4–0.8 GB and a project's media and cache 2–5 GB, so the VPS keeps only active projects. |
 | Claude usage | The owner is on **Claude Pro**, so Claude's per-video work must be economical (see the pick step in section 8). |
 | Secrets | `.env` on the VPS only, never committed. Holds `PIXABAY_API_KEY`. |
-| Repo | `github.com/Huu-tu/CineFacts`, public. The repo root *is* the pipeline (no `video-factory/` subfolder). The VPS clones it to `/root/CineFacts` and **has push rights through a write-enabled deploy key** (owner approved). Commits made during video work are pushed from the VPS. |
+| Repo | `github.com/Huu-tu/CineFacts`, public. The repo root *is* the pipeline (no `video-factory/` subfolder). The VPS clones it over HTTPS to `/root/CineFacts`. **The owner dropped the deploy key**, so the VPS has no push rights: it pulls from GitHub and commits locally. How VPS commits get back to GitHub is left open for now (for example, the owner pushes with their own credentials). |
 | Public repo hygiene | No secrets, no media, and no third-party copyrighted material in git. That includes the six reference frames, which are screenshots of someone else's video. |
 | Language | Video content is English. Claude talks to the owner in Vietnamese. |
 
@@ -346,8 +346,8 @@ For every failure it prints the exact command that fixes it.
 - **From step 2 on**, building and testing happen in Claude Code on the VPS, with full shell
   access, the real hardware, and the Pixabay key in `.env`. That makes performance, Kokoro
   model choice and `systemd-run` behaviour measured, not guessed.
-- The VPS gets a write-enabled deploy key for this repo. The Windows checkout must
-  `git pull` before anyone edits it.
+- No deploy key (the owner's decision). The VPS pulls the public repo over HTTPS and
+  commits locally. Pushing VPS commits to GitHub is an open item.
 - Recommended to the owner, though not blocking: rotate the root password (it was shared in
   chat) and switch SSH to key-only login.
 
