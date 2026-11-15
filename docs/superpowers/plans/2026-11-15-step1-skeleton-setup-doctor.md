@@ -209,12 +209,13 @@ git add -A && git commit -m "feat: repo skeleton, config loader, style preset, r
   - `check_memory(meminfo_text: str) -> Check`: reports MemTotal; warn below 3 GiB
   - `check_systemd_run(run_cmd) -> Check`: runs `systemd-run --scope -p MemoryMax=100M --quiet true`; failure → warn (heavy steps fall back to nice/ionice only)
   - `check_os(os_release_text: str) -> Check`: warn unless it contains `VERSION_ID="24.04"`
+  - `check_rclone_remote(listremotes_out: str) -> Check`: ok if a line equals `gdrive:`, otherwise warn. Fix: `rclone config  # new remote "gdrive", type drive, scope drive.file; see CLAUDE.md`
   - `run_checks(offline: bool) -> list[Check]`: wires the real inputs, and skips `check_pixabay` (status warn, detail "skipped (--offline)") when offline
   - `format_report(checks: list[Check]) -> str`: one line per check, `[ OK ]`/`[WARN]`/`[FAIL]` name: detail; then, for each non-ok check, `  fix: <fix>`; a final summary line
   - `exit_code(checks) -> int`: 1 if any fail, else 0
   - `main(offline: bool = False) -> int`
 
-Binaries checked by `run_checks`: `ffmpeg`, `ffprobe`, `tmux`, `git`, `fc-list`, plus `claude` (warn only; fix: `curl -fsSL https://claude.ai/install.sh | bash`). Each binary's fix is its apt line.
+Binaries checked by `run_checks`: `ffmpeg`, `ffprobe`, `tmux`, `git`, `fc-list`, `rclone`, plus `claude` (warn only; fix: `curl -fsSL https://claude.ai/install.sh | bash`). Each binary's fix is its apt line.
 
 - [ ] **Step 1: Write the failing tests** in `tests/test_doctor.py`
 
@@ -273,6 +274,11 @@ def test_font_detection():
     assert d.check_font("/usr/share/fonts/opentype/inter/Inter-Bold.otf: Inter:style=Bold").status == "ok"
     assert d.check_font("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf: DejaVu Sans").status == "fail"
 
+def test_rclone_remote_detection():
+    assert d.check_rclone_remote("gdrive:\n").status == "ok"
+    c = d.check_rclone_remote("")
+    assert c.status == "warn" and "rclone config" in c.fix
+
 def test_report_and_exit_code():
     checks = [d.Check("a", "ok", "fine"), d.Check("b", "warn", "meh", "do x"), d.Check("c", "fail", "bad", "do y")]
     out = d.format_report(checks)
@@ -297,7 +303,7 @@ Expected: FAIL / ImportError
 - [ ] **Step 4: Run all tests and confirm they pass**
 
 Run: `python -m pytest -v`
-Expected: 18 passed (5 config + 13 doctor)
+Expected: 19 passed (5 config + 14 doctor)
 
 - [ ] **Step 5: Smoke run on Windows** (expected to report failures, but must not crash)
 
@@ -323,7 +329,7 @@ git add cinefacts/doctor.py tests/test_doctor.py && git commit -m "feat: doctor 
 
 Behaviour, in order. Every section prints a `==>` header, and the script uses `set -euo pipefail`.
 1. Refuse to run unless on Linux with `apt-get`, and run as root (or via sudo).
-2. `apt-get update` (skipped if it ran less than 6 h ago, judged from `/var/lib/apt/periodic/update-success-stamp` or the lists mtime), then `apt-get install -y --no-install-recommends ffmpeg python3-venv python3-pip tmux curl ca-certificates git fontconfig fonts-inter espeak-ng`. If `fonts-inter` is not available, download `https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip`, extract the TTFs to `/usr/local/share/fonts/inter/`, and run `fc-cache -f`.
+2. `apt-get update` (skipped if it ran less than 6 h ago, judged from `/var/lib/apt/periodic/update-success-stamp` or the lists mtime), then `apt-get install -y --no-install-recommends ffmpeg python3-venv python3-pip tmux curl ca-certificates git fontconfig fonts-inter espeak-ng rclone unzip`. If `fonts-inter` is not available, download `https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip`, extract the TTFs to `/usr/local/share/fonts/inter/`, and run `fc-cache -f`.
 3. `python3 -m venv .venv` if it is missing; then `.venv/bin/pip install --upgrade pip` and `.venv/bin/pip install -r requirements.txt`.
 4. Models: `download URL DEST MIN_BYTES` skips the download if DEST exists and is ≥ MIN_BYTES. Otherwise it runs `curl -fL --retry 3 -o DEST.part URL`, checks the size, then `mv DEST.part DEST`. URLs:
    - `https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx` (300000000)
@@ -331,7 +337,7 @@ Behaviour, in order. Every section prints a `==>` header, and the script uses `s
 5. Claude Code: if `claude` is not on PATH (also check `~/.local/bin/claude`), run `curl -fsSL https://claude.ai/install.sh | bash`. *(The spec says "Node.js LTS + Claude Code". The native installer needs no Node, so Node is skipped. This is Claude's call, recorded in CLAUDE.md.)*
 6. `cp -n .env.example .env`, then `chmod 600 .env`.
 7. `./run doctor --offline || true`.
-8. Print the next steps: (a) put `PIXABAY_API_KEY` in `.env`, then run `./run doctor`; (b) run `claude` once to log in; (c) optionally run `./setup.sh --deploy-key`.
+8. Print the next steps: (a) put `PIXABAY_API_KEY` in `.env`, then run `./run doctor`; (b) run `claude` once to log in; (c) optionally run `./setup.sh --deploy-key`; (d) run `rclone config` to authorise Google Drive (see CLAUDE.md).
 
 `--deploy-key` mode (runs only this, then exits):
 - If `/root/.ssh/cinefacts_deploy` is missing, run `ssh-keygen -t ed25519 -N "" -C cinefacts-vps -f /root/.ssh/cinefacts_deploy`.
@@ -356,7 +362,7 @@ Behaviour, in order. Every section prints a `==>` header, and the script uses `s
 
 `CLAUDE.md` sections:
 1. **What this is**: 2 lines, plus a link to the spec.
-2. **Commands**: `./setup.sh`, `./setup.sh --deploy-key`, `./run doctor [--offline]`, `.venv/bin/python -m pytest`.
+2. **Commands**: `./setup.sh`, `./setup.sh --deploy-key`, `./run doctor [--offline]`, `.venv/bin/python -m pytest`. Also a **Google Drive setup** subsection: run `rclone config` to create a new remote named `gdrive`, type `drive`, scope `drive.file`, and answer "n" to auto config. On a PC with a browser, run the printed `rclone authorize "drive" ...` command and paste the token back. Test with `rclone lsd gdrive:`.
 3. **Conventions**:
    - the project folder layout (copied from spec section 6);
    - `plan.json` is the source of truth;
@@ -384,11 +390,12 @@ Behaviour, in order. Every section prints a `==>` header, and the script uses `s
 - [ ] **Step 4: First setup run.** Run `./setup.sh 2>&1 | tee /root/setup-1.log`. Expected: exit code 0, and doctor (offline) shows only the `.env` key FAIL and the `claude` login WARN.
 - [ ] **Step 5: Second run (idempotency).** Run `./setup.sh`. Expected: exit code 0, no re-download of the models, and noticeably faster.
 - [ ] **Step 6: Write the Pixabay key into `.env`** over SSH, piped through stdin so it never lands in shell history or command arguments. Then run `./run doctor`. Expected: all OK, except `claude` (WARN until the owner logs in).
-- [ ] **Step 7: Tests on the VPS.** Run `.venv/bin/python -m pytest -v`. Expected: 18 passed.
+- [ ] **Step 7: Tests on the VPS.** Run `.venv/bin/python -m pytest -v`. Expected: 19 passed.
 - [ ] **Step 8: Check the Kokoro model loads.** Run `.venv/bin/python -c "from kokoro_onnx import Kokoro; k=Kokoro('models/kokoro-v1.0.onnx','models/voices-v1.0.bin'); s,sr=k.create('Hello from CineFacts.', voice='am_michael', speed=1.0, lang='en-us'); print(len(s)/sr, sr)"`. Expected: prints a duration of about 1–2 s and `24000`. If the kokoro-onnx API differs, record the fix in CLAUDE.md under "Errors we hit".
 - [ ] **Step 9: Record problems.** Every problem hit in steps 3–8 goes into the "Errors we hit" table in `CLAUDE.md`. Then commit and push from Windows.
 - [ ] **Step 10: Deploy key.** Run `./setup.sh --deploy-key`. The owner adds the printed key on GitHub with write access. Then run `ssh -T git@github-cinefacts`. Expected: "successfully authenticated".
-- [ ] **Step 11: Owner logs in to Claude Code.** The owner runs `claude` in tmux in Termius. Then `./run doctor` should be all OK.
+- [ ] **Step 11: Owner logs in to Claude Code.** The owner runs `claude` in tmux in Termius.
+- [ ] **Step 12: Owner authorises Google Drive.** Follow CLAUDE.md "Google Drive setup". rclone must also be installed on the owner's Windows PC for `rclone authorize`. Then run `rclone mkdir gdrive:CineFacts && rclone lsd gdrive:`. Expected: `CineFacts` is listed. Then `./run doctor` should be all OK.
 
 ### Task 6: Merge
 

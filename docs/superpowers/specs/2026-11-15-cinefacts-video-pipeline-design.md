@@ -26,7 +26,10 @@ shot only redoes the work that depends on it.
 
 **Goals**
 - Turn `projects/<id>/storyboard.md` into `final.mp4` (1920x1080, 24 fps, H.264/AAC),
-  `subs.srt`, `chapters.txt` (YouTube chapter timestamps) and `credits.txt`.
+  `subs.srt`, `chapters.txt` (YouTube chapter timestamps), `credits.txt`, and `youtube.txt`
+  (title, description with chapters and credits, tags; written by Claude).
+- Archive every finished video to the owner's **Google Drive** (`CineFacts/<id>/`), so it can
+  be watched or downloaded from a phone, and so the VPS disk can be cleaned.
 - Run entirely on the owner's VPS: 2 vCPU, 3.8 GB RAM, 34 GB free disk, no GPU.
 - Use only free tools and services.
 - Make every step re-runnable and cached, with the same inputs giving the same timing and content.
@@ -61,6 +64,7 @@ shot only redoes the work that depends on it.
 | Pixabay API | Free key, already obtained. 100 requests per 60 s. Search results must be cached for 24 h. Files must be downloaded rather than hotlinked. Systematic mass downloads are forbidden. Video "medium" is 1920x1080 (older clips 1280x720). Photos are at most 1280 px wide without "full API access", so photos look soft at 1080p and video clips are preferred. |
 | Pexels | New API keys are paused. The design keeps providers pluggable so Pexels can be added later. |
 | Wikimedia Commons | Free, no key. Used for specific subjects (Concorde, a named aircraft) that stock sites lack. Assume the channel will be monetised, so **only CC0, Public Domain and CC BY (any version) are allowed**. CC BY-SA, any NC, any ND, and unknown licences are filtered out at search time and rejected by QA. Author and licence go into credits. *(Claude's call: the safe default.)* |
+| Storage | Owner chose **Google Drive via rclone** for long-term storage (free 15 GB, shared with Gmail, so about 20 finals). rclone uses the `drive.file` scope, so it can only see files it created itself. Authorisation is a one-time owner step (headless flow: `rclone authorize "drive"` on a machine with a browser). A final is about 0.4–0.8 GB and a project's media and cache 2–5 GB, so the VPS keeps only active projects. |
 | Claude usage | The owner is on **Claude Pro**, so Claude's per-video work must be economical (see the pick step in section 8). |
 | Secrets | `.env` on the VPS only, never committed. Holds `PIXABAY_API_KEY`. |
 | Repo | `github.com/Huu-tu/CineFacts`, public. The repo root *is* the pipeline (no `video-factory/` subfolder). The VPS clones it to `/root/CineFacts` and **has push rights through a write-enabled deploy key** (owner approved). Commits made during video work are pushed from the VPS. |
@@ -111,9 +115,13 @@ Each was discussed with the owner, and the owner chose.
    2. **Script and facts:** the owner reads `script.md` and `facts.md`. For the first project,
       Claude also renders 3 short voice samples for the owner to pick from.
    3. **Preview:** `out/preview_720p.mp4`. Claude gives the absolute path for SFTP download.
-4. After the preview is approved, Claude renders `final.mp4`, runs QA, and reports the paths
-   of `final.mp4`, `subs.srt`, `chapters.txt` and `credits.txt`.
-5. Corrections are plain conversation ("use a different clip for the crack shot", "slower
+4. After the preview is approved, Claude renders `final.mp4`, runs QA, writes `youtube.txt`,
+   runs `./run publish <id>` (uploads `out/` to Drive at `CineFacts/<id>/`), and reports the
+   Drive folder and the local paths.
+5. Once the owner says the video is posted, Claude runs `./run clean <id>`. This deletes
+   `media/`, `audio/`, `cache/` and `narration.wav` (all rebuildable), and deletes `out/` only
+   if the Drive copy is verified with `rclone check`. The text files stay in git.
+6. Corrections are plain conversation ("use a different clip for the crack shot", "slower
    voice"). Claude edits `plan.json` and re-runs only the affected steps.
 
 ## 6. Project folder and artifacts
@@ -137,6 +145,7 @@ projects/<id>/                       <id> = short ASCII slug, e.g. why-planes-wh
   out/subs.srt
   out/chapters.txt
   out/credits.txt
+  out/youtube.txt                    Claude: title, description (chapters + credits), tags
   qa.json                            QA report
 ```
 
@@ -253,6 +262,10 @@ input hash has not changed.
    - there are no placeholders (final only);
    - every external asset has a credit;
    - the SRT is valid and ends before the video does.
+9. **publish:** runs `rclone copy out/ gdrive:CineFacts/<id>/`, then `rclone check` to verify
+   it, and prints the Drive folder.
+10. **clean:** as described in section 5. It refuses to delete `out/` unless `rclone check`
+    passes.
 
 **Frame-accurate timing** is the computational heart and must be unit-tested. All durations
 are snapped to the 1/24 s grid using cumulative rounding (each boundary is rounded, then
@@ -317,8 +330,11 @@ docs/superpowers/specs/           this document
 It prints the remaining manual steps: put the Pixabay key in `.env`, and run `claude` once to
 log in.
 
+`setup.sh` also installs `rclone`.
+
 `./run doctor` checks binaries and versions, the venv, model files, the font, `.env` keys, a
-live Pixabay test call, free disk (warn below 5 GB), RAM, and that systemd-run is available.
+live Pixabay test call, free disk (warn below 5 GB), RAM, that systemd-run is available, and
+that the rclone remote `gdrive:` is configured (warn until the owner authorises it).
 For every failure it prints the exact command that fixes it.
 
 ## 12. Where the building happens
@@ -346,16 +362,17 @@ Each step ends with a commit and a report to the owner.
    with the real narration, SRT and chapters.
 3. **Real visuals:** Pixabay search, contact sheets, Claude picks, fetch, Ken Burns, colour
    grade, credits. Wikimedia provider.
-4. **Preview → approve → final loop**, with `make-video` SKILL.md and CLAUDE.md complete enough
-   for a fresh session.
+4. **Preview → approve → final loop**, plus `youtube.txt`, `publish` to Google Drive and
+   `clean`, with `make-video` SKILL.md and CLAUDE.md complete enough for a fresh session.
 5. **QA** as in section 8.
 6. **Polish:** music ducking, overlays and HUD callouts, chapter title cards, AI-image
-   provider, more styles, optional web preview page, Shorts cut-downs.
+   provider, more styles, optional web preview page, Shorts cut-downs, and optional direct
+   YouTube upload (private).
 
 **MVP is done when:**
 - `setup.sh` on a clean Ubuntu 24.04 VPS installs everything;
 - `./run all demo` produces `out/final.mp4` with English narration, Pixabay footage, SRT,
-  chapters and credits;
+  chapters, credits and `youtube.txt`, and `./run publish demo` puts them on Google Drive;
 - QA passes;
 - a fresh Claude Code session can make a new video from `CLAUDE.md` and SKILL.md without the
   owner explaining anything.
