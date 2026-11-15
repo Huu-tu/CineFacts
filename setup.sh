@@ -75,6 +75,12 @@ else
   say "Installing Claude Code (native installer)"
   curl -fsSL https://claude.ai/install.sh | bash
 fi
+# the native installer puts claude in ~/.local/bin, which a minimal Ubuntu shell lacks
+if [ -x "$HOME/.local/bin/claude" ] && ! grep -qs 'HOME/.local/bin' "$HOME/.bashrc"; then
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
+  echo "added ~/.local/bin to PATH in ~/.bashrc (open a new shell or: source ~/.bashrc)"
+fi
+export PATH="$HOME/.local/bin:$PATH"
 
 # ---------------------------------------------------------------- .env
 if [ ! -f .env ]; then cp .env.example .env; fi
